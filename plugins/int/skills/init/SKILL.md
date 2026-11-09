@@ -13,7 +13,7 @@ argument-hint: "[stack=nextjs|none] [design=int|client]"
 - ห้าม commit, push หรือรัน install ใดๆ
 - ห้ามอ่านหรือแก้ `.env` และไฟล์ secret
 - ห้ามทับไฟล์เงียบ ไฟล์ที่ต่างจากเดิมต้องแสดง diff และถามทีละไฟล์ ถ้าถามไม่ได้ให้ข้ามและรายงาน
-- ค่าใน Bash ไม่ข้ามระหว่าง tool call ให้จำ path ของ `ROOT`, `STAGE`, `ECC` แล้วเขียนเต็มทุกครั้ง
+- ค่าใน Bash ไม่ข้ามระหว่าง tool call ให้จำ path ของ `ROOT`, `STAGE`, `ECC` แล้วเขียนเต็มทุกครั้ง ทุก block ที่ใช้ `$STAGE` หรือ `$ECC` (ยกเว้น block ที่สร้าง `STAGE`) ต้องขึ้นต้นด้วยการกำหนดค่าเป็น path จริง ถ้าไม่ทราบค่าให้หยุด เพราะค่าว่างจะทำให้ path ชี้ไปที่ `/`
 
 ## 1. ตรวจ git repo
 
@@ -29,7 +29,7 @@ argument-hint: "[stack=nextjs|none] [design=int|client]"
 
 ถามผู้ใช้ทั้งสามคำสั่ง ถ้า `stack=nextjs` เสนอค่าเริ่มต้น `pnpm check:all`, `pnpm test`, `pnpm build`
 
-แต่ละค่าต้องไม่ว่าง เป็นบรรทัดเดียว ไม่มี `: ` หรือ ` #` และไม่ขึ้นต้นด้วยอักขระพิเศษของ YAML (`{ [ & * ! | > ' " % @` และ backtick) เพราะค่าจะถูกวางลงใน `lefthook.yml` ถ้าไม่ผ่านให้ขอให้ห่อเป็น script ใน `package.json` แล้วถามใหม่
+แต่ละค่าต้องไม่ว่าง เป็นบรรทัดเดียว ไม่มี `'`, `: ` หรือ ` #` และไม่ขึ้นต้นด้วยอักขระพิเศษของ YAML (`{ [ & * ! | > " % @` และ backtick) เพราะค่าจะถูกใส่ในคำสั่ง shell แบบ single quote และวางลงใน `lefthook.yml` ถ้าไม่ผ่านให้ขอให้ห่อเป็น script ใน `package.json` แล้วถามใหม่
 
 ## 4. เตรียมไฟล์ใน staging
 
@@ -176,8 +176,11 @@ done < "${CLAUDE_PLUGIN_ROOT}/templates/base/gitignore.append"
 | ค่าอื่น | แสดงค่าเดิม แล้วถาม "ทับ" หรือ "ข้าม" |
 
 ```bash
-cd "ROOT" && jq '.scripts.prepare = "lefthook install"' package.json > "$STAGE/package.json.new" && cp "$STAGE/package.json.new" package.json
+cd "ROOT" && jq '.scripts.prepare = "lefthook install"' package.json > "$STAGE/package.json.new"
+diff -u package.json "$STAGE/package.json.new"
 ```
+
+ถ้า diff เปลี่ยนเฉพาะส่วนของ `scripts` และ `prepare` ให้ `cp "$STAGE/package.json.new" package.json` ถ้ามีบรรทัดอื่นเปลี่ยนด้วย เช่น `jq` จัดรูปแบบไฟล์ใหม่ ให้ถามตามกติกาการถามไฟล์ `DIFF` ก่อน
 
 ## 8. สรุป
 

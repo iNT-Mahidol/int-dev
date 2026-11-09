@@ -57,13 +57,13 @@ allowed-tools:
 jq -n --slurpfile tpl "${CLAUDE_PLUGIN_ROOT}/templates/base/.claude/settings.json" --slurpfile cur .claude/settings.json '$tpl[0].permissions.deny - ($cur[0].permissions.deny // [])'
 ```
 
-ผลเป็น `[]` คือ ✅ ถ้ามีรายการเป็น ❌ และแสดงรายการที่ขาดทั้งหมด วิธีแก้: เพิ่มรายการเหล่านั้นใน `permissions.deny`
+ผลเป็น `[]` คือ ✅ ถ้ามีรายการเป็น ❌ และแสดงรายการที่ขาดทั้งหมด วิธีแก้: เพิ่มรายการเหล่านั้นใน `permissions.deny` ถ้า `jq` error เป็น ❌ พร้อมข้อความ error (ไฟล์หายให้ระบุว่าดูข้อ 1)
 
 รายการ `Bash(pnpm deploy:prod *)` เปลี่ยนชื่อได้ตามคำสั่ง deploy จริงของระบบ ถ้าขาดแต่รายการนี้และมีรายการ deny ที่ขึ้นต้น `Bash(` และมีคำว่า `deploy` ให้เป็น ⚠️ และให้ผู้ใช้ยืนยันว่าเป็นคำสั่งจริง
 
 ### 5. lefthook
 
-รัน `git rev-parse --git-path hooks/pre-commit` แล้วอ่านไฟล์นั้น มีคำว่า `lefthook` คือ ✅ ถ้าไม่มีไฟล์หรือไม่มีคำนี้เป็น ❌ วิธีแก้: `pnpm add -D lefthook` แล้ว `pnpm install` หรือ `pnpm exec lefthook install`
+รัน `git rev-parse --git-path hooks/pre-commit` และ `git rev-parse --git-path hooks/pre-push` แล้วอ่านทั้งสองไฟล์ ทั้งคู่มีคำว่า `lefthook` คือ ✅ ถ้าไฟล์ใดไม่มีหรือไม่มีคำนี้เป็น ❌ พร้อมชื่อ hook วิธีแก้: `pnpm add -D lefthook` แล้ว `pnpm install` หรือ `pnpm exec lefthook install`
 
 ### 6. design-quality
 
