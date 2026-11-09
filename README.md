@@ -31,7 +31,7 @@ claude plugin install int@int-dev
 หลังรันเสร็จ ให้ทำตามลำดับ:
 
 1. ติดตั้ง [gitleaks](https://github.com/gitleaks/gitleaks)
-2. `pnpm add -D lefthook` (ต้องทำก่อน `pnpm install` เพราะ `prepare` เรียก `lefthook`)
+2. `pnpm add -D lefthook --allow-build=lefthook` (ต้องทำก่อน `pnpm install` เพราะ `prepare` เรียก `lefthook` และ pnpm บล็อก build script ถ้าไม่ระบุ flag นี้)
 3. `pnpm install`
 4. `/ecc:ck init`
 5. `claude plugin list` ตรวจว่า `ecc@ecc` เปิดอยู่

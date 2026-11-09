@@ -63,7 +63,7 @@ jq -n --slurpfile tpl "${CLAUDE_PLUGIN_ROOT}/templates/base/.claude/settings.jso
 
 ### 5. lefthook
 
-รัน `git rev-parse --git-path hooks/pre-commit` และ `git rev-parse --git-path hooks/pre-push` แล้วอ่านทั้งสองไฟล์ ทั้งคู่มีคำว่า `lefthook` คือ ✅ ถ้าไฟล์ใดไม่มีหรือไม่มีคำนี้เป็น ❌ พร้อมชื่อ hook วิธีแก้: `pnpm add -D lefthook` แล้ว `pnpm install` หรือ `pnpm exec lefthook install`
+รัน `git rev-parse --git-path hooks/pre-commit` และ `git rev-parse --git-path hooks/pre-push` แล้วอ่านทั้งสองไฟล์ ทั้งคู่มีคำว่า `lefthook` คือ ✅ ถ้าไฟล์ใดไม่มีหรือไม่มีคำนี้เป็น ❌ พร้อมชื่อ hook วิธีแก้: `pnpm add -D lefthook --allow-build=lefthook` ถ้ามี lefthook อยู่แล้วใช้ `pnpm exec lefthook install`
 
 ### 6. design-quality
 

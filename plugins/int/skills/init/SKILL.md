@@ -187,7 +187,7 @@ diff -u package.json "$STAGE/package.json.new"
 แสดงตาราง `ไฟล์ | ผล` โดยผลเป็น สร้าง, ทับ, แก้ไข หรือ ข้าม พร้อมจำนวนรวมแต่ละแบบ แล้วบอกขั้นตอนที่ผู้ใช้ต้องทำเองตามลำดับนี้:
 
 1. ติดตั้ง `gitleaks` ให้เรียกได้จาก PATH (https://github.com/gitleaks/gitleaks)
-2. `pnpm add -D lefthook` ต้องทำก่อน `pnpm install` เพราะ script `prepare` เรียก `lefthook`
+2. `pnpm add -D lefthook --allow-build=lefthook` ต้องทำก่อน `pnpm install` เพราะ script `prepare` เรียก `lefthook` และ pnpm บล็อก build script ถ้าไม่ระบุ flag นี้
 3. `pnpm install`
 4. `/ecc:ck init`
 5. `claude plugin list` ตรวจว่า `ecc@ecc` เปิดอยู่

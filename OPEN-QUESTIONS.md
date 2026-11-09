@@ -17,7 +17,7 @@
 | 11 | "ระบุขนาดไว้ในบรรทัด Complexity ของ plan" แต่ template ของ plan ไม่มีบรรทัด Complexity | `source/10` | ใช้ช่อง `ขนาด` ในบรรทัดหัว plan |
 | 12 | สถานะ plan ใน source คือ `approved` แต่คำขอ doctor เขียนว่า "อนุมัติ" | `source/10`, คำขอ | doctor ตรวจทั้งสองคำ |
 | 13 | คำขอให้ gitignore มีไฟล์ของ ck แต่ ck เก็บข้อมูลที่ `~/.claude/ck/` ไม่มีไฟล์ใน repo | `source/10` ck, skill `ck` ของ ECC 2.2.3 | ไม่เพิ่ม entry ของ ck |
-| 14 | ขั้นตอนหลัง init ในคำขอให้รัน `pnpm install` แต่ `lefthook` ไม่อยู่ใน dependencies ทำให้ `prepare` fail | คำขอ, `source/10` | init แจ้งให้รัน `pnpm add -D lefthook` และติดตั้ง `gitleaks` ก่อน `pnpm install` |
+| 14 | ขั้นตอนหลัง init ในคำขอให้รัน `pnpm install` แต่ `lefthook` ไม่อยู่ใน dependencies ทำให้ `prepare` fail | คำขอ, `source/10` | init แจ้งให้รัน `pnpm add -D lefthook --allow-build=lefthook` และติดตั้ง `gitleaks` ก่อน `pnpm install` (ทดสอบกับ pnpm 12.10 ถ้าไม่มี flag จะ exit 1 และไม่ติดตั้ง hook) |
 | 15 | grep ข้อ 4 "ทั้ง repo" เจอชื่อคำสั่ง ECC แบบสั้นใน `source/10:43` ซึ่งห้ามแก้ และในไฟล์ PROMPT | คำขอ | grep โดยยกเว้น `source/` และ `int-dev-source-2026-11-09/` |
 | 16 | ชื่อ deploy ใน deny คือ `pnpm deploy:prod` แต่ source ให้เปลี่ยนตามระบบ | `source/10` | init เตือนในสรุปให้ปรับ `.claude/settings.json` ตามคำสั่งจริง |
 | 17 | `nextjs.md` มีหัวข้อ "ยังไม่ได้ตัดสิน" (env schema, cache, naming, timezone/พ.ศ., logging/PDPA, git workflow, deployment/migration, lint/format) | `21-rules-nextjs/nextjs.md` | ไม่ตัดสินแทน คัด verbatim |
