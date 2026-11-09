@@ -1,0 +1,19 @@
+# lefthook.yml: คำสั่งชุดเดียวกับใน AGENTS.md
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{ts,tsx,js,jsx,css}"
+      run: pnpm exec eslint {staged_files}
+    secrets:
+      run: gitleaks git --pre-commit --staged --redact --verbose
+pre-push:
+  commands:
+    no-main:
+      run: test "$(git rev-parse --abbrev-ref HEAD)" != "main"
+    check:
+      run: {{CHECK_CMD}}
+    test:
+      run: {{TEST_CMD}}
+    build:
+      run: {{BUILD_CMD}}

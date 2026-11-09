@@ -1,0 +1,617 @@
+{
+ "name": "INT System Standard",
+ "version": 1,
+ "meta": {
+  "brandGuide": "INT Brand Guidelines ปรับปรุง 18 เม.ย. 2569",
+  "note": "มาตรฐานกลาง: ค่าในไฟล์นี้คือแหล่งจริง ระบบต่าง ๆ ตามค่านี้ ไม่ใช่กลับกัน"
+ },
+ "color": {
+  "themes": [
+   {
+    "id": "light",
+    "name": "Light"
+   },
+   {
+    "id": "dark",
+    "name": "Dark"
+   }
+  ],
+  "tokens": [
+   {
+    "name": "int-blue",
+    "value": "#005992",
+    "usage": "INT Blue (PMS 7462C · CMYK 90 50 0 30 · RGB 0 89 146), คู่มือแบรนด์หน้า 22. 7.4:1 บนขาว: ใช้เป็นข้อความได้. chart-1 ในธีมสว่าง. Palette only — never use in components."
+   },
+   {
+    "name": "int-deep-blue",
+    "value": "#003063",
+    "usage": "INT Deep Blue (CMYK 100 70 0 50 · RGB 0 48 99), สีหลักของแบรนด์. 13.1:1 บนขาว. ใช้ผ่าน primary (สว่าง) และ brand (ทั้งสองธีม). Palette only."
+   },
+   {
+    "name": "int-light-blue",
+    "value": "#009bd9",
+    "usage": "Light Blue (CMYK 80 20 0 0 · RGB 0 155 217). 3.1:1 บนขาว: เส้น ไอคอน focus ring และข้อความ 24px ขึ้นไปเท่านั้น ห้ามเป็นข้อความเนื้อหาหรือพื้นปุ่มที่มีตัวอักษรขาว. 4.2:1 บน Deep Blue. Palette only."
+   },
+   {
+    "name": "int-orange",
+    "value": "#f18700",
+    "usage": "INT Orange (PMS 715C · CMYK 0 55 100 0 · RGB 241 135 0). 2.6:1 บนขาว: ห้ามเป็นข้อความบนพื้นขาว; บน Deep Blue 5.1:1 ใช้เป็นข้อความได้. ข้อความบนพื้นส้มใช้ Deep Blue. Palette only."
+   },
+   {
+    "name": "int-silver",
+    "value": "#898c8e",
+    "usage": "Metallic Silver (PMS 877C · CMYK 0 0 0 60 · RGB 137 140 142). 3.4:1 บนขาว: ไม่ใช้เป็นข้อความ. chart-5 และขอบช่องกรอก (input) ทั้งสองธีม. Palette only."
+   },
+   {
+    "name": "int-gold",
+    "value": "#ffcc19",
+    "usage": "จุดกลางของ gradient ส้ม (CMYK 0 20 90 0 ในคู่มือ). dark chart-4. Palette only."
+   },
+   {
+    "name": "int-yellow",
+    "value": "#ffff33",
+    "usage": "จุดปลายของ gradient ส้ม (CMYK 0 0 80 0 ในคู่มือ). Palette only."
+   },
+   {
+    "name": "int-blue-50",
+    "value": "#f2f6fa",
+    "usage": "Light muted and sidebar ground. Palette only."
+   },
+   {
+    "name": "int-blue-100",
+    "value": "#e8f1f8",
+    "usage": "Light secondary and accent fill. Palette only."
+   },
+   {
+    "name": "int-blue-200",
+    "value": "#d3e0ec",
+    "usage": "Light border. Palette only."
+   },
+   {
+    "name": "int-blue-300",
+    "value": "#c3d3e3",
+    "usage": "สำรอง (เดิมเป็นขอบช่องกรอกในธีมสว่าง ซึ่งได้ contrast ไม่ถึง 3:1). Palette only."
+   },
+   {
+    "name": "int-navy-950",
+    "value": "#001a36",
+    "usage": "Dark page ground. Palette only."
+   },
+   {
+    "name": "int-navy-900",
+    "value": "#001f40",
+    "usage": "Dark card, popover และ sidebar. Palette only."
+   },
+   {
+    "name": "int-navy-800",
+    "value": "#0a2a4d",
+    "usage": "Dark muted. Palette only."
+   },
+   {
+    "name": "int-navy-700",
+    "value": "#0b3d70",
+    "usage": "Dark secondary and accent. Palette only."
+   },
+   {
+    "name": "int-ink",
+    "value": "#0f1b2a",
+    "usage": "Light text. Palette only."
+   },
+   {
+    "name": "int-slate",
+    "value": "#4a5361",
+    "usage": "Light muted text. Palette only."
+   },
+   {
+    "name": "int-mist",
+    "value": "#a9bfd6",
+    "usage": "Muted text on brand and in dark. Palette only."
+   },
+   {
+    "name": "int-snow",
+    "value": "#f1f6fb",
+    "usage": "Dark text. Palette only."
+   },
+   {
+    "name": "int-red",
+    "value": "#c81e1e",
+    "usage": "Light destructive. Palette only."
+   },
+   {
+    "name": "int-red-light",
+    "value": "#ff6b6b",
+    "usage": "Dark destructive. Palette only."
+   },
+   {
+    "name": "background",
+    "value": {
+     "light": "#ffffff",
+     "dark": "{int-navy-950}"
+    },
+    "usage": "พื้นหน้า (bg-background) 60% ของจอ: ขาว / navy-950. ข้อความ: foreground, muted-foreground."
+   },
+   {
+    "name": "foreground",
+    "value": {
+     "light": "{int-ink}",
+     "dark": "{int-snow}"
+    },
+    "usage": "Body text on background, card and popover."
+   },
+   {
+    "name": "card",
+    "value": {
+     "light": "#ffffff",
+     "dark": "{int-navy-900}"
+    },
+    "usage": "พื้นการ์ด (bg-card). สว่าง: ขาว; มืด: navy-900 (เปลี่ยนจาก Deep Blue เพราะ primary บน Deep Blue ได้แค่ 4.2:1). ข้อความ: card-foreground, muted-foreground, primary (ลิงก์)."
+   },
+   {
+    "name": "card-foreground",
+    "value": {
+     "light": "{int-ink}",
+     "dark": "{int-snow}"
+    },
+    "usage": "Text on card."
+   },
+   {
+    "name": "popover",
+    "value": {
+     "light": "#ffffff",
+     "dark": "{int-navy-900}"
+    },
+    "usage": "Dialog, เมนู, รายการ combobox. ค่าเดียวกับ card ทั้งสองธีม; แยกจากพื้นด้วย border และ overlay."
+   },
+   {
+    "name": "popover-foreground",
+    "value": {
+     "light": "{int-ink}",
+     "dark": "{int-snow}"
+    },
+    "usage": "Text on popover."
+   },
+   {
+    "name": "primary",
+    "value": {
+     "light": "{int-deep-blue}",
+     "dark": "{int-light-blue}"
+    },
+    "usage": "ปุ่มที่ยืนยันการกระทำ (bg-primary), ลิงก์, ชื่อระบบใน header. สว่าง: Deep Blue 13.1:1 บนขาว; มืด: Light Blue 5.6:1 บน background, 5.3:1 บน card. ข้อความบนพื้น primary ใช้ primary-foreground เสมอ ไม่ใช่ขาว."
+   },
+   {
+    "name": "primary-foreground",
+    "value": {
+     "light": "#ffffff",
+     "dark": "{int-navy-950}"
+    },
+    "usage": "ข้อความและไอคอนบน primary: ขาวในธีมสว่าง, navy-950 ในธีมมืด (ขาวบน Light Blue ได้แค่ 3.1:1)."
+   },
+   {
+    "name": "secondary",
+    "value": {
+     "light": "{int-blue-100}",
+     "dark": "{int-navy-700}"
+    },
+    "usage": "Secondary button and 'ใช้งาน' badge fill."
+   },
+   {
+    "name": "secondary-foreground",
+    "value": {
+     "light": "{int-deep-blue}",
+     "dark": "{int-snow}"
+    },
+    "usage": "Text on secondary."
+   },
+   {
+    "name": "muted",
+    "value": {
+     "light": "{int-blue-50}",
+     "dark": "{int-navy-800}"
+    },
+    "usage": "Hover rows, skeletons, quiet panels."
+   },
+   {
+    "name": "muted-foreground",
+    "value": {
+     "light": "{int-slate}",
+     "dark": "{int-mist}"
+    },
+    "usage": "Help text, table meta, empty-state copy on background and muted."
+   },
+   {
+    "name": "accent",
+    "value": {
+     "light": "{int-blue-100}",
+     "dark": "{int-navy-700}"
+    },
+    "usage": "Selected menu item, current nav tab."
+   },
+   {
+    "name": "accent-foreground",
+    "value": {
+     "light": "{int-deep-blue}",
+     "dark": "{int-snow}"
+    },
+    "usage": "Text on accent."
+   },
+   {
+    "name": "highlight",
+    "value": {
+     "light": "{int-orange}",
+     "dark": "{int-orange}"
+    },
+    "usage": "The ONE orange accent per screen (pulse dot, impersonation banner, current-step marker). Never a button."
+   },
+   {
+    "name": "highlight-foreground",
+    "value": {
+     "light": "{int-deep-blue}",
+     "dark": "{int-navy-950}"
+    },
+    "usage": "Text on highlight."
+   },
+   {
+    "name": "brand",
+    "value": {
+     "light": "{int-deep-blue}",
+     "dark": "{int-deep-blue}"
+    },
+    "usage": "พื้นน้ำเงินของแบรนด์ (bg-brand) เหมือนกันทั้งสองธีม: แถบน้ำเงิน (header + เมนูหลัก) ของ AppShell และแผงแบรนด์หน้า login."
+   },
+   {
+    "name": "brand-foreground",
+    "value": {
+     "light": "#ffffff",
+     "dark": "#ffffff"
+    },
+    "usage": "ข้อความบน brand: ชื่อระบบ ชื่อผู้ใช้ เมนูที่เลือกอยู่ หัวข้อบนแผงแบรนด์ (13.1:1). ขาวโปร่ง 8–12% ใช้เป็น hover และเส้นคั่นบนแถบ."
+   },
+   {
+    "name": "brand-muted-foreground",
+    "value": {
+     "light": "{int-mist}",
+     "dark": "{int-mist}"
+    },
+    "usage": "ข้อความรองบน brand: เมนูที่ไม่ได้เลือก role ของผู้ใช้ ประโยคแบรนด์ (6.9:1)."
+   },
+   {
+    "name": "brand-accent",
+    "value": {
+     "light": "{int-light-blue}",
+     "dark": "{int-light-blue}"
+    },
+    "usage": "Light Blue บน brand: เส้นใต้ 3px ของเมนูที่เลือกอยู่ และเส้นชีพจรบนแผงแบรนด์ (4.2:1 ผ่านเกณฑ์ 3:1 ของเส้นที่ไม่ใช่ตัวอักษร; ห้ามใช้เป็นข้อความเล็ก)."
+   },
+   {
+    "name": "destructive",
+    "value": {
+     "light": "{int-red}",
+     "dark": "{int-red-light}"
+    },
+    "usage": "Errors, field invalid state, destructive button text (on a 10% tint)."
+   },
+   {
+    "name": "border",
+    "value": {
+     "light": "{int-blue-200}",
+     "dark": "oklch(1 0 0 / 12%)"
+    },
+    "usage": "Hairlines: header bottom, table rows, cards, dialogs."
+   },
+   {
+    "name": "input",
+    "value": {
+     "light": "{int-silver}",
+     "dark": "{int-silver}"
+    },
+    "usage": "ขอบช่องกรอกและ select: Metallic Silver ทั้งสองธีม (3.4:1 บนขาว, 5.2:1 บน background มืด, 4.9:1 บน card มืด). ค่าเดิม (int-blue-300 / ขาว 18%) ได้ไม่ถึง 3:1."
+   },
+   {
+    "name": "ring",
+    "value": {
+     "light": "{int-light-blue}",
+     "dark": "{int-light-blue}"
+    },
+    "usage": "Focus ring on every interactive control."
+   },
+   {
+    "name": "overlay",
+    "value": {
+     "light": "rgba(0, 26, 54, 0.5)",
+     "dark": "rgba(0, 0, 0, 0.6)"
+    },
+    "usage": "ฉากหลังมืดใต้ Dialog และ sheet ทั้งสองธีม (ห้ามใช้ foreground ผสมโปร่ง เพราะในธีมมืด foreground เป็นสีสว่าง)."
+   },
+   {
+    "name": "chart-1",
+    "value": {
+     "light": "{int-blue}",
+     "dark": "{int-light-blue}"
+    },
+    "usage": "Chart series 1."
+   },
+   {
+    "name": "chart-2",
+    "value": {
+     "light": "{int-light-blue}",
+     "dark": "{int-orange}"
+    },
+    "usage": "Chart series 2."
+   },
+   {
+    "name": "chart-3",
+    "value": {
+     "light": "{int-orange}",
+     "dark": "{int-mist}"
+    },
+    "usage": "Chart series 3."
+   },
+   {
+    "name": "chart-4",
+    "value": {
+     "light": "{int-deep-blue}",
+     "dark": "{int-gold}"
+    },
+    "usage": "Chart series 4."
+   },
+   {
+    "name": "chart-5",
+    "value": {
+     "light": "{int-silver}",
+     "dark": "{int-silver}"
+    },
+    "usage": "Chart series 5."
+   }
+  ]
+ },
+ "type": {
+  "fonts": [],
+  "families": {
+   "sans": "\"Kanit\", system-ui, sans-serif",
+   "mono": "\"Geist Mono\", ui-monospace, monospace"
+  },
+  "groups": [
+   {
+    "name": "Headings",
+    "family": "sans",
+    "styles": [
+     {
+      "name": "eyebrow",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": 500,
+      "letterSpacing": "0.02em",
+      "sample": "The Institute for Technology and Innovation Management",
+      "usage": "บรรทัดนำเหนือ display บนแผงแบรนด์ (Lead/Subheadline ในคู่มือแบรนด์) สี brand-muted-foreground. ใช้บนแผงแบรนด์เท่านั้น."
+     },
+     {
+      "name": "display",
+      "fontSize": "60px",
+      "lineHeight": 1,
+      "fontWeight": 600,
+      "letterSpacing": "-0.025em",
+      "sample": "INT System",
+      "usage": "แผงแบรนด์เท่านั้น (Headline ในคู่มือแบรนด์, Kanit 600 แทน FC Vision / Hubot Sans Expanded Bold). text-6xl font-semibold tracking-tight."
+     },
+     {
+      "name": "page-title",
+      "fontSize": "30px",
+      "lineHeight": "36px",
+      "fontWeight": 600,
+      "letterSpacing": "-0.025em",
+      "sample": "หน่วยงาน",
+      "usage": "One h1 per page, top-left of main. text-3xl font-semibold tracking-tight text-foreground."
+     },
+     {
+      "name": "section-title",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 600,
+      "sample": "หน่วยงานย่อย",
+      "usage": "h2 for sections and dialog titles. text-xl font-semibold."
+     }
+    ]
+   },
+   {
+    "name": "Text",
+    "family": "sans",
+    "styles": [
+     {
+      "name": "body",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": 400,
+      "sample": "ค่าที่ปิดใช้ไม่โผล่ในตัวเลือกใหม่ แต่ข้อมูลเดิมยังแสดงชื่อได้",
+      "usage": "Page intro and running text, max ~65ch. text-base."
+     },
+     {
+      "name": "metric",
+      "fontSize": "24px",
+      "lineHeight": "32px",
+      "fontWeight": 600,
+      "sample": "1,284",
+      "usage": "ตัวเลขสำคัญระดับ 2: ตัวเลขสรุปบน dashboard หรือหัวการ์ด ใช้ tabular-nums; ห้ามใหญ่กว่า page-title. text-2xl font-semibold tabular-nums."
+     },
+     {
+      "name": "ui",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": 500,
+      "sample": "บันทึก",
+      "usage": "Buttons, table cells, labels, menu items. text-sm font-medium."
+     },
+     {
+      "name": "small",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": 400,
+      "sample": "แก้ไขล่าสุด 29 ต.ค. 2569",
+      "usage": "Help text and meta in muted-foreground. text-sm."
+     },
+     {
+      "name": "caption",
+      "fontSize": "12px",
+      "lineHeight": "16px",
+      "fontWeight": 400,
+      "sample": "ใช้งาน",
+      "usage": "Badges and tiny meta. text-xs."
+     }
+    ]
+   },
+   {
+    "name": "Marketing",
+    "family": "sans",
+    "styles": [
+     {
+      "name": "hero",
+      "fontSize": "48px",
+      "lineHeight": "56px",
+      "fontWeight": 600,
+      "letterSpacing": "-0.025em",
+      "sample": "ชีพจรแห่งนวัตกรรม ขับเคลื่อนอนาคต",
+      "usage": "หน้าสาธารณะเท่านั้น: หัวข้อใหญ่หนึ่งตัวต่อหน้า (h1 ของหน้า landing). ห้ามใช้ในหน้าทำงาน. text-5xl font-semibold tracking-tight."
+     },
+     {
+      "name": "section-heading",
+      "fontSize": "30px",
+      "lineHeight": "38px",
+      "fontWeight": 600,
+      "letterSpacing": "-0.02em",
+      "sample": "หลักสูตรที่เปิดรับสมัคร",
+      "usage": "หน้าสาธารณะเท่านั้น: หัวข้อของแต่ละช่วงในหน้า landing (h2). text-3xl font-semibold."
+     },
+     {
+      "name": "lead",
+      "fontSize": "20px",
+      "lineHeight": "30px",
+      "fontWeight": 400,
+      "sample": "เรียนรู้จากผู้เชี่ยวชาญของมหาวิทยาลัยมหิดล ทั้งในห้องเรียนและออนไลน์",
+      "usage": "หน้าสาธารณะเท่านั้น: ย่อหน้าแรกใต้ hero หรือ section-heading สี muted-foreground กว้างไม่เกิน 60ch. text-xl."
+     }
+    ]
+   },
+   {
+    "name": "Code",
+    "family": "mono",
+    "styles": [
+     {
+      "name": "code",
+      "fontSize": "12px",
+      "lineHeight": "16px",
+      "fontWeight": 400,
+      "sample": "technology_type",
+      "usage": "Stable codes and ids shown to admins (<code class=text-xs>)."
+     }
+    ]
+   }
+  ]
+ },
+ "spacing": {
+  "tokens": [
+   {
+    "name": "space-1",
+    "value": "4px",
+    "usage": "Icon-to-text gap inside badges."
+   },
+   {
+    "name": "space-2",
+    "value": "8px",
+    "usage": "gap-2: button groups, title-to-intro gap."
+   },
+   {
+    "name": "space-3",
+    "value": "12px",
+    "usage": "gap-3: logo to system name; form label to field."
+   },
+   {
+    "name": "space-4",
+    "value": "16px",
+    "usage": "px-4: page side gutter on phones; field-to-field gap."
+   },
+   {
+    "name": "space-6",
+    "value": "24px",
+    "usage": "sm:px-6 gutter; gap-6 between page sections."
+   },
+   {
+    "name": "space-10",
+    "value": "40px",
+    "usage": "py-10: main top and bottom padding."
+   }
+  ]
+ },
+ "radius": {
+  "tokens": [
+   {
+    "name": "radius-sm",
+    "value": "6px",
+    "usage": "Small chips."
+   },
+   {
+    "name": "radius-md",
+    "value": "8px",
+    "usage": "Inputs, xs/sm buttons."
+   },
+   {
+    "name": "radius-lg",
+    "value": "10px",
+    "usage": "Buttons (rounded-lg), cards, dialogs. --radius = 0.625rem."
+   },
+   {
+    "name": "radius-xl",
+    "value": "14px",
+    "usage": "Large panels."
+   },
+   {
+    "name": "radius-full",
+    "value": "9999px",
+    "usage": "Badges, avatar."
+   }
+  ]
+ },
+ "size": {
+  "tokens": [
+   {
+    "name": "header-height",
+    "value": "64px",
+    "usage": "Sticky app header h-16."
+   },
+   {
+    "name": "content-max",
+    "value": "1280px",
+    "usage": "max-w-7xl: header, banner and main share this column."
+   },
+   {
+    "name": "control-height",
+    "value": "32px",
+    "usage": "Default button and input height h-8."
+   },
+   {
+    "name": "logo-height",
+    "value": "36px",
+    "usage": "Header logo h-9."
+   }
+  ]
+ },
+ "shadow": {
+  "note": "Border first: ความลึกมีสองระดับเท่านั้น การ์ดและพื้นในหน้าใช้ border ไม่ใช้เงา",
+  "tokens": [
+   {
+    "name": "shadow-raised",
+    "value": {
+     "light": "0 1px 2px rgba(0, 26, 54, 0.06), 0 4px 12px rgba(0, 26, 54, 0.10)",
+     "dark": "0 1px 2px rgba(0, 0, 0, 0.40), 0 4px 12px rgba(0, 0, 0, 0.45)"
+    },
+    "usage": "สิ่งที่ลอยเหนือหน้าแต่ไม่บังหน้า: เมนู dropdown, รายการ select, toast, thumb ของ switch. ใช้คู่กับ border เสมอ. Tailwind: shadow-(--shadow-raised)."
+   },
+   {
+    "name": "shadow-overlay",
+    "value": {
+     "light": "0 12px 32px rgba(0, 26, 54, 0.20)",
+     "dark": "0 12px 32px rgba(0, 0, 0, 0.60)"
+    },
+    "usage": "สิ่งที่บังหน้าและต้องตอบก่อนไปต่อ: Dialog, AlertDialog, sheet. อยู่บน overlay เสมอ. Tailwind: shadow-(--shadow-overlay)."
+   }
+  ]
+ }
+}
