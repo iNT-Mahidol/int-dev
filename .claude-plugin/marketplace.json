@@ -1,0 +1,16 @@
+{
+  "name": "int-dev",
+  "owner": {
+    "name": "iNT-Mahidol"
+  },
+  "metadata": {
+    "description": "มาตรฐานการพัฒนาระบบด้วย Claude Code ของ INT"
+  },
+  "plugins": [
+    {
+      "name": "int",
+      "source": "./plugins/int",
+      "description": "วางไฟล์มาตรฐาน INT ลงในโปรเจกต์ และตรวจว่าโปรเจกต์ยังตรงมาตรฐาน"
+    }
+  ]
+}
