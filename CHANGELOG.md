@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0
+
+- เพิ่ม `.claude/rules/ecc-agents.md`: subagent ของ ECC และ effort ในแต่ละระยะ
+- `/int:doctor` ตรวจว่ามี `.claude/rules/ecc-agents.md`
+
 ## 0.1.0
 
 - เพิ่ม marketplace `int-dev` และ plugin `int`

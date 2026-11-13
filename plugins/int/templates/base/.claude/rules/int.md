@@ -38,6 +38,7 @@
 ## ผลจาก subagent
 - ตอบเป็นรายการปัญหา แต่ละข้อมี `file:line` ไม่เกิน 10 ข้อ
 - ห้ามแปะโค้ด log หรือเนื้อไฟล์กลับมา
+- เลือก subagent และ effort ตาม `.claude/rules/ecc-agents.md`
 
 ## ข้อตรวจตอน review
 - ตรงกับ Requirements ของ plan, ไม่มีงานนอกขอบเขต, ไม่มี secret หรือข้อมูลส่วนบุคคลใน log

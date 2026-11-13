@@ -24,7 +24,7 @@ allowed-tools:
 
 ### 1. ไฟล์บังคับ
 
-`CLAUDE.md`, `AGENTS.md`, `lefthook.yml`, `.claude/settings.json`, `.claude/rules/int.md`, `.claude/design/DESIGN.md`
+`CLAUDE.md`, `AGENTS.md`, `lefthook.yml`, `.claude/settings.json`, `.claude/rules/int.md`, `.claude/rules/ecc-agents.md`, `.claude/design/DESIGN.md`
 
 แต่ละไฟล์ที่ขาดเป็น ❌ วิธีแก้: รัน `/int:init`
 
